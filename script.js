@@ -28,10 +28,15 @@ class Pet {
   
   function choosePet(type) {
     if (type === 'dog') {
+      currentPet = new Pet('Dog', 'Woof! 🐶', 'https://images.pexels.com/photos/20681880/pexels-photo-20681880.jpegadd');
+      if (type === 'dog') {
       currentPet = new Pet('Dog', 'Woof! 🐶', 'https://images.pexels.com/photos/20681880/pexels-photo-20681880.jpeg');
+      }
     } else {
-      currentPet = new Pet('Cat', 'Meow! 🐱', 'https://images.pexels.com/photos/18848682/pexels-photo-18848682.jpeg');
-    }
+    currentPet = new Pet('Cat', 'Meow! 🐱', 'https://images.pexels.com/photos/18848682/pexels-photo-18848682.jpeg');
+    
+    currentPet = new Pet('Cat', 'Meow! 🐱', 'https://images.pexels.com/photos/18848682/pexels-photo-18848682.jpeg');
+  }
   
     document.getElementById('petImage').src = currentPet.image;
     document.getElementById('game').style.display = 'block';
