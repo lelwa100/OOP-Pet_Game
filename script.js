@@ -28,22 +28,24 @@ class Pet {
   
   function choosePet(type) {
     if (type === 'dog') {
-      currentPet = new Pet('Dog', 'Woof! 🐶', 'https://images.pexels.com/photos/20681880/pexels-photo-20681880.jpeg');
-      if (type === 'dog') {
-      currentPet = new Pet('Cat', 'Meew! 🐱', 'https://images.pexels.com/photos/20681880/pexels-photo-20681880.jpeg');
-      }
-    } else {
-    currentPet = new Pet('Bird', 'clirp! 🦜', 'https://www.pexels.com/photo/close-up-of-a-graceful-pink-flamingo-preening-33277095/');
-    
-    currentPet = new Pet('Rabbit', 'squeak! 🐰', 'https://images.pexels.com/photos/18848682/pexels-photo-18848682.jpeg');
-  }
+      currentPet = new Pet('Dog', 'Woof! 🐶', 'https://www.pexels.com/photo/gray-and-white-puppy-3299908/');
+    } else if(type === 'cat')
+      currentPet = new Pet('Cat', 'Meow! 🐱', 'https://www.pexels.com/photo/person-putting-sunglasses-on-a-cat-4587958/');
+    else if(type === 'Bird'){
+      currentPet = new Pet('bird', 'Chirp! 🦜','https://images.pexels.com/photos/987947/pexels-photo-987947.jpeg');
+    }
+      else if(type === 'Rabbit'){
+      currentPet = new Pet('Rabbit', 'squeak! 🐰','https://images.pexels.com/photos/1510544/pexels-photo-1510544.jpeg');
+    }
   
+
+  if (currentPet){
     document.getElementById('petImage').src = currentPet.image;
     document.getElementById('game').style.display = 'block';
     updateCounter(0);
     showFunActions(currentPet.name);
   }
-  
+}
 
   //Function to play with the pet
   function playWithPet() {
@@ -62,7 +64,7 @@ class Pet {
     const actions = petName === 'Dog'
       ? ['Bark', 'Wag Tail', 'Fetch Ball']
       : ['Meow', 'Purr', 'Chase Mouse'];
-  
+
     const actionBox = document.getElementById('actions');
     actionBox.innerHTML = '<strong>Fun Actions:</strong><br>';
   
