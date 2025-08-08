@@ -6,7 +6,7 @@
   }
 
   h1 {
-    color: #c36868;
+    color: #855a5a;
   }
 
   .pet {
@@ -15,7 +15,7 @@
     margin: 20px auto;
     cursor: pointer;
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(76, 130, 97, 0.2);
+    box-shadow: 0 4px 8px rgba(32, 114, 63, 0.2);
     transition: transform 0.2s;
   }
 
@@ -34,7 +34,7 @@
     font-size: 16px;
     margin: 10px;
     cursor: pointer;
-    box-shadow: #dc6c6c;
+    box-shadow:rebeccapurple;
   }
 
   #actions {

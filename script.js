@@ -2,19 +2,23 @@
 //Object-Oriented Programming (OOP)
 
 class Pet {
-    constructor(name, sound, image) {
+    constructor(name, soundText, image,soundUrl) {
       this.name = name;
-      this.sound = sound;
+      this.soundText = soundText;
       this.image = image;
+      this.soundUrl =new Audio (soundUrl)
       this.playCount = 0;
     }
   
     speak() {
-      alert(this.sound);
+      alert(this.soundText);
+      this.soundUrl.currentTime = 0;
+      this.soundUrl.play();
     }
   
     play() {
       this.playCount++;
+      this. soundUrl.load;
       this.speak();
       updateCounter(this.playCount);
       showFunActions(this.name);
@@ -28,16 +32,18 @@ class Pet {
   
   function choosePet(type) {
     if (type === 'Dog') {
-      currentPet = new Pet('Dog', 'Woof! 🐶', 'https://images.pexels.com/photos/3299908/pexels-photo-3299908.jpeg');
+      currentPet = new Pet('Dog', 'Woof! 🐶', 
+        'https://images.pexels.com/photos/3299908/pexels-photo-3299908.jpeg',
+        'media/dog-bark-effect-382711.mp3');
     } 
     else if(type === 'Cat'){
-      currentPet = new Pet('Cat', 'Meow! 🐱', 'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg');
+      currentPet = new Pet('Cat', 'Meow! 🐱', 'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg','media/cat-meow-sound-383823.mp3' );
     }
       else if(type === 'Bird'){
-      currentPet = new Pet('bird', 'Chirp! 🦜','https://images.pexels.com/photos/987947/pexels-photo-987947.jpeg');
+      currentPet = new Pet('bird', 'Chirp! 🦜','https://images.pexels.com/photos/987947/pexels-photo-987947.jpeg','media/bird-sounds-241394.mp3');
     }
       else if(type === 'Rabbit'){
-      currentPet = new Pet('Rabbit', 'squeak! 🐰','https://images.pexels.com/photos/1510544/pexels-photo-1510544.jpeg');
+      currentPet = new Pet('Rabbit', 'squeak! 🐰','https://images.pexels.com/photos/1510544/pexels-photo-1510544.jpeg','media/rabbit-sounds-358172.mp3');
     }
   
 
