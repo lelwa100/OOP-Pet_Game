@@ -1,12 +1,41 @@
  body {
     font-family: Arial, sans-serif;
-    background: hsl(310, 11%, 89%);
+    background: hsl(310, 21%, 55%);
     text-align: center;
     padding: 30px;
   }
 
+  ul {
+    list-style-type: none;
+    margin: -50;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(218, 213, 206);
+  }
+  .header {
+    margin-left: -35;
+
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: rgb(120, 122, 117);
+  }
+  
+
   h1 {
-    color: #855a5a;
+    color: #f0ecec;
   }
 
   .pet {
