@@ -6,21 +6,21 @@ class Pet {
       this.name = name;
       this.soundText = soundText;
       this.image = image;
-      this.soundUrl =new Audio (soundUrl)
+      this.soundUrl =new Audio (soundUrl)// audio (this is abstaction and uncapsulation pillar of OOP  because new audio)we cant see which audio they use
       this.playCount = 0;
     }
   
     speak() {
-      alert(this.soundText);
-      this.soundUrl.currentTime = 0;
+      alert(this.soundText); //alert box
+      this.soundUrl.currentTime = 0; //insure restart each click
       this.soundUrl.play();
     }
   
     play() {
       this.playCount++;
-      this. soundUrl.load;
+      this. soundUrl.load;// ensure that the sound can start without
       this.speak();
-      updateCounter(this.playCount);
+      updateCounter(this.playCount); //mapping
       showFunActions(this.name);
     }
   }
@@ -32,7 +32,7 @@ class Pet {
   
   function choosePet(type) {
     if (type === 'Dog') {
-      currentPet = new Pet('Dog', 'Woof! 🐶', 
+      currentPet = new Pet('Dog', 'Woof! 🐶', //currentPet is the object
         'https://images.pexels.com/photos/3299908/pexels-photo-3299908.jpeg',
         'media/dog-bark-effect-382711.mp3');
     } 
@@ -40,7 +40,7 @@ class Pet {
       currentPet = new Pet('Cat', 'Meow! 🐱', 'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg','media/cat-meow-sound-383823.mp3' );
     }
       else if(type === 'Bird'){
-      currentPet = new Pet('bird', 'Chirp! 🦜','https://images.pexels.com/photos/987947/pexels-photo-987947.jpeg','media/bird-sounds-241394.mp3');
+      currentPet = new Pet('bird', 'Chirp! 🦜','https://images.pexels.com/photos/987947/pexels-photo-987947.jpeg','media/bird-333090.mp3');
     }
       else if(type === 'Rabbit'){
       currentPet = new Pet('Rabbit', 'squeak! 🐰','https://images.pexels.com/photos/1510544/pexels-photo-1510544.jpeg','media/rabbit-sounds-358172.mp3');
@@ -64,14 +64,31 @@ class Pet {
   
   //Function to update the counter
   function updateCounter(count) {
-    document.getElementById('counter').innerText = `Times played: ${count}`;
+    document.getElementById('counter').innerText = `Times played: ${count}`; // ${count} its called template literal
   }
   
   //Function + Loop: Fun pet actions
   function showFunActions(petName) {
-    const actions = petName === 'Dog'
-      ? ['Bark', 'Wag Tail', 'Fetch Ball']
-      : ['Meow', 'Purr', 'Chase Mouse']
+    let actions = [];
+      if (petName === 'Dog') {
+        actions = ['Bark', 'Wag Tail', 'Fetch Ball'];
+      
+      } else if (petName === 'Cat') {
+        actions = ['Meow', 'Purr', 'Chase Mouse'];
+      
+      } else if (petName === 'Rabbit') {
+        actions = ['Hopping', 'Digging', 'Eating Carrots'];
+      
+    } else if (petName === 'Bird') {
+        actions = ['Squak', 'Fly', 'Chirps'];
+      }
+
+  //function showFunActions(petName) {
+  //  const actions = petName === 'Dog'
+   //   ? ['Bark', 'Wag Tail', 'Fetch Ball']
+    //  : ['Meow', 'Purr', 'Chase Mouse']
+    //  ? ['Chirps','fly','Squack']
+     // : ['Hopping','Purr','Digging']
       
 
     const actionBox = document.getElementById('actions');
